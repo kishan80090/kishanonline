@@ -1,4 +1,4 @@
- <?php   
+<?php   
 
 session_start();
 
@@ -15,7 +15,7 @@ $_SESSION['username'] = 'JohnDoe';
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Show Session</title>
+    <title>Add to Session</title>
 
 </head>
 
@@ -36,27 +36,32 @@ $_SESSION['username'] = 'JohnDoe';
     if($ispostback)
 
     {
-
       $name=$_GET["name"];
 
-    echo $_SESSION[$name];
+    $data=$_GET["data"];
+
+    $_SESSION[$name]=$data;
 
     }
     ?>
 
-    <h1>Show Session</h1>
+    <h1>Add to Session</h1>
 
     <form>
 
         <input type="hidden" name="check" value="1">
 
-        <h2>Name</h2><input type="text" value="<?php echo $name ?>" name="name"/>
+        <h2>Name</h2><input type="text" value="<?php echo $name ?>" name="name">
+
         <br>
+
+        <h2>Data</h2><input type="text" name="data"  value="<?php echo $data ?>">
+
         <br>
+
         <button type="submit">Submit</button>
 
     </form>
-
 </body>
 
 </html>

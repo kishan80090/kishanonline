@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prince Bhai - Sign Up</title>
-  <!-- Font Awesome for eye icon -->
+  <title>Sign Up</title>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * {
@@ -106,7 +106,7 @@
 
   <div class="form-container">
     <h2>Sign Up</h2>
-    <form method="get" action="data.php">
+    <form method="get" action="test.php">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required />
@@ -133,11 +133,9 @@
       <input class="submit-btn" type="submit" value="Submit" />
     </form>
   </div>
-
   <script>
     const toggle = document.getElementById("togglePassword");
     const password = document.getElementById("password");
-
     toggle.addEventListener("click", function () {
       const type = password.getAttribute("type") === "password" ? "text" : "password";
       password.setAttribute("type", type);
@@ -145,6 +143,5 @@
       this.classList.toggle("fa-eye-slash");
     });
   </script>
-
 </body>
 </html>
