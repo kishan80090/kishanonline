@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-echo ($_GET['checked']);
-    $ispostback=($_GET['checked']);
-    if($ispostback)
-    {
-      echo "postback";
+<?php
+$hostname="localhost";
+$username="root";
+$password="";
+$database="";
 
-    }else{
-        echo "first back";
-    }
+$conn= mysqli($hostname,$username,$password,$database);
+
+if($conn->connect_error)
+{
+   echo "failed";
+   die("not connect:"  . $conn->connect_error);
+}
+$name=$_GET['name'];
+$password=$_GET['password'];
+$email=$_GET['email'];
+
+$stmt=conn->prepare("insert into sign (name,password,email) values(?,?,?) ");
+$stmt=bind_param('sss',$email,$name,$password);
+$stmt->execute();
+echo "faileds";
+try{
+    $conn->execute();
+} catch(Exception $e)
+{
+    echo "insert not add";
+}
+
 ?>
-<form method="get">
-<input type="hidden" Value="a" name="checked"/>
-<input type="submit" Value="add"/>
-</form>
-</body>
-</html>
