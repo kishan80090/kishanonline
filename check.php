@@ -199,9 +199,8 @@ $conn->close();
 
       Confirm Password<input class="inputs" type="password" name="confirmpassword"value="<?php echo ($confirmpassword); ?>" required/><br><br>
 
-      <input class="submit-btn" type="submit" value="Submit"/>
-
-  </form>
+      <input class="submit-btn" type="submit" value="Submit"/>          
+      </form>
 </div>
 </body>
 </html>
