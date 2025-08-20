@@ -132,7 +132,7 @@ if (isset($_POST['check']))
     $ispostback = true;
 }
 
-if ($ispostback) 
+if ($ispostback)
 {
     $user_name = $_POST["user_name"];
     $name = $_POST["name"];
@@ -154,6 +154,7 @@ if ($ispostback)
         $stored_password = $password; 
 
         $stmt = $conn->prepare("INSERT into sign(user_name,name,password) VALUES (?,?,?)");
+
         $stmt->bind_param("sss", $user_name, $name, $stored_password);
 
         try {
@@ -166,7 +167,7 @@ if ($ispostback)
                 header("Location: welcome.php");
                 exit();
             } 
-
+ 
         } 
         catch(Exception $e) 
         {
@@ -180,13 +181,15 @@ if ($ispostback)
         $message = '<div class="error">Password and confirm password do not match.</div>';
     }
 }
-
 $conn->close();
 ?>
 
 <div class="form-container">
+  
   <h2 class="fading">Registration Form</h2>
+
   <?php if (!empty($message)) echo $message; ?>
+
   <form method="post">
 
       <input type="hidden" name="check" />
@@ -199,8 +202,10 @@ $conn->close();
 
       Confirm Password<input class="inputs" type="password" name="confirmpassword"value="<?php echo ($confirmpassword); ?>" required/><br><br>
 
-      <input class="submit-btn" type="submit" value="Submit"/>          
-      </form>
+      <input class="submit-btn" type="submit" value="Submit"/>   
+       
+</form> 
+
 </div>
 </body>
 </html>

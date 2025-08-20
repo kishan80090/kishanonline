@@ -9,7 +9,7 @@ if ($conn->connect_error)
 {
     echo "Hi";
     echo $conn->connect_error;
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " .$conn->connect_error);
 }
 echo "connected successfully <br/> ";
 $user_name = $_GET["user_name"];

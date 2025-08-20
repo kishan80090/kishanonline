@@ -2,7 +2,7 @@
 $hostname="localhost";
 $username="root";
 $password="";
-$database="";
+$database="page";
 
 $conn= mysqli($hostname,$username,$password,$database);
 
@@ -25,5 +25,4 @@ try{
 {
     echo "insert not add";
 }
-
 ?>

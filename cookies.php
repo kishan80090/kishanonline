@@ -7,7 +7,6 @@
 </head>
 <body>
     <?php
-
 setcookie("username", "Champak Roy", time() + (7 * 24 * 3600));
 
 if (isset($_COOKIE['username']))
@@ -19,7 +18,6 @@ else
 {
     echo "Welcome, guest!";
 }
-
 ?>
 </form>
 </body>
